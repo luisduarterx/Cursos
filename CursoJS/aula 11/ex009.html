@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Digite seu Nome" id="nome">
+    <input type="number" name="idade" id="idade">
+    <input type="button" value="Enviar" id="botao" onclick="botao()">
+
+    <div id="resultado">
+        <p></p>
+        <h2></h2>
+
+    </div>
+
+    <script>
+
+        var getNome = document.querySelector('input#nome')
+        var getIdade = document.querySelector('input#idade')
+
+        function botao(){
+            var nome = getNome.value
+            var idade = Number(getIdade.value)
+
+            var res = document.querySelector('div#resultado')
+            res.innerText = `Seu nome é ${nome} e tem ${idade} anos`
+
+
+            
+            
+
+        }
+
+        
+        
+
+    </script>
+</body>
+</html>

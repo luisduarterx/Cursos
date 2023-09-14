@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando Idade</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(234,182,118)
+        }
+        .box{
+            width: 50%;
+            height: auto;
+            padding-right: 50px;
+            padding-left: 250px;
+            padding: 50px;
+            background-color: white;
+            margin: auto;
+            margin-top: 150px;
+            
+            color: black;
+
+        }
+        label{
+            font-size: 18px;
+            margin-right: 30px;
+            
+        }
+        a{
+            font-size: 18px;
+            margin-right: 30px;
+        }
+        #nascimento{
+            height: 30px;
+            width: 250px;
+            margin-bottom: 30px;
+        }
+        .botao{
+            height: 30px;
+            font-size: 18px;
+            right: 0px;
+            margin-left: 100px;
+            
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 300px;
+            
+        }
+
+        p{
+            text-align: center;
+            text-decoration: underline ;
+        }
+        #resultado{
+            bottom: 0px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        .title{
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 class="title"> Qual é a sua idade ?</h1>
+    <div class="box" id="content">
+        <label>Digite seu ano de Nascimento:</label>
+
+        <input type="number" id="nascimento">
+
+        <input type="Submit" onclick="calcula()" class="botao" value="Calcular Idade">
+    </br>
+
+        <label>Qual seu sexo ?</label><input type="radio" value="Masculino" name="sex"id="sexo1" checked>
+        <label for="sexo1">Masculino</label>
+        <input type="radio" name="sex" value="Feminino" id="sexo2">
+        <label for="sexo2">Feminino</label>
+
+
+        <div id="resultado">
+            Estamos aguardando o resultado
+            
+        </div>
+    </div>
+    <p>© Desenvolvido por Luis Roxo</p>
+
+
+    <script>
+        
+        
+
+        
+        
+
+        
+        
+        function calcula(){
+
+        
+        const data = new Date()
+        var anoAtual = Number(data.getFullYear())
+
+        var pegaConteudoNasc = document.querySelector('#nascimento')
+        var nasci = Number(pegaConteudoNasc.value)
+
+        var idade = anoAtual - nasci
+
+        var sexo1 = document.querySelector('#sexo1')
+        var sexo2 = document.querySelector('#sexo2')
+
+        if(sexo1.checked){
+            var sexo = "Homem"
+            var sexId = 0
+            
+
+        }else if(sexo2.checked){
+            var sexo = "Mulher"
+            var sexId = 1
+        }
+
+        
+
+        
+            
+
+            
+            function mostrar(){
+                var result = document.querySelector('#resultado')
+                if(idade < 1 || idade >120){
+                    alert("Você nao digitou uma data de nascimento digitou uma data invalida por favor tente novamente")
+                }else if(sexId == 0 && idade >1 && idade < 17){
+                    
+                    result.innerHTML = `<p>Detectamos um menino de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/menino.jpg" alt="Menino jovem">'
+
+                }else if(sexId == 1 && idade >1 && idade < 17){
+                    result.innerHTML = `<p>Detectamos uma menina de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/menina.jpg" alt="Menina jovem">'
+                }else if(sexId == 0 && idade > 17 && idade < 26){
+                    result.innerHTML = `<p>Detectamos um Jovem de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/homem jovem.jpg" alt="Menina jovem">'
+                }else if(sexId == 1 && idade > 17 && idade < 26){
+                    result.innerHTML = `<p>Detectamos uma Jovem de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/mulher jovem.jpg" alt="Menina jovem">'
+                }else if(sexId == 0 && idade > 26 && idade <40){
+                    result.innerHTML = `<p>Detectamos um Homem de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/homem adulto.jpg" alt="Menina jovem">'
+                }else if(sexId == 1 && idade > 26 && idade <40){
+                    result.innerHTML = `<p>Detectamos uma Mulher de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/mulher adulta.jpg" alt="Menina jovem">'
+                }else if(sexId == 0 && idade > 40 && idade < 150){
+                    result.innerHTML = `<p>Detectamos um senhor de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/homemvelho.jpg" alt="Menina jovem">'
+                }else if(sexId == 1 && idade > 40 && idade < 150){
+                    result.innerHTML = `<p>Detectamos uma senhora de ${idade} anos<br>`
+                    result.innerHTML += '<img src="img/mulher velha.jpg" alt="Menina jovem">'
+                }
+
+                
+
+            }
+        
+            mostrar()
+
+        
+
+    }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando numeros com intervalos</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(234,182,118)
+        }
+        .box{
+            width: 70%;
+            height: auto;
+            padding-right: 50px;
+            padding-left: 250px;
+            padding: 50px;
+            background-color: white;
+            margin: auto;
+            margin-top: 150px;
+            
+            color: black;
+
+        }
+        label{
+            font-size: 18px;
+
+        }
+         
+        .botao{
+            height: 30px;
+            font-size: 18px;
+            right: 0px;
+            margin-left: 100px;
+            
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 300px;
+            
+        }
+
+        p{
+            text-align: center;
+            text-decoration: underline ;
+        }
+        #resultado{
+            bottom: 0px;
+            margin-top: 40px;
+            text-align: start;
+        }
+        #resultado p{
+            font-size: 22px;;
+            text-decoration: none;
+            color: black;
+            text-align: start;
+        }
+        .title{
+            text-align: center;
+        }
+        input{
+            margin-bottom: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title"> Vamos Contar</h1>
+    <div class="box" id="content">
+        <div class="conteudo">
+            <label for="inicio">Início:</label>
+            <input type="number" name="inicio" id="numInicial"><br>
+            <label for="final">Fim:</label>
+            <input type="number" name="final" id="numFinal"><br>
+            <label for="passos">Passos:</label>
+            <input type="number" name="passos" id="numPulos"><br>
+            <input type="button" class="botao" value="Contar" id="enviar" onclick="clicou()">
+
+        </div>
+        <div id="resultado">
+            <h3>Preparando a Contagem</h3>
+            <p></p>
+            
+        </div>
+    </div>
+    <p>© Desenvolvido por Luis Roxo</p>
+
+
+    <script>
+      
+      
+
+      function clicou(){
+        
+      var pegaInicio = document.querySelector('input#numInicial')
+      var pegaFim = document.querySelector('input#numFinal')
+      var pegaPulos = document.querySelector('input#numPulos')
+
+      var inicio = Number(pegaInicio.value)
+      var final = Number(pegaFim.value)
+      var pulos = Number(pegaPulos.value)
+       var resTitulo = document.querySelector('#resultado h3')
+         var res = document.querySelector('#resultado p')
+      
+    //        alert(`Inicio ${inicio} Final ${final} Pulos ${pulos}`)
+
+        /*do{
+            resultado = inicio++
+            resultado+= pulos
+            res.innerHTML += `- ${resultado} -`
+        }while(resultado < final)
+*/
+        if(pegaInicio.value.length == 0 || pegaFim.value.length == 0 ||pegaPulos.value.length == 0 ){
+            alert(" nao digitou algum numero")
+        }else{
+        
+            if(inicio<final){
+                //contagem crescete
+                for(resultado = inicio; resultado < final; resultado+= pulos){
+                    resTitulo.innerHTML = 'Contando:'
+                    res.innerHTML += ` ${resultado} <span>&#128073;</span>`
+                }
+            }else{
+                //contagem regressiva
+                for(resultado = inicio; resultado > final; resultado-= pulos){
+                    resTitulo.innerHTML = 'Contando:'
+                    res.innerHTML += ` ${resultado} <span>&#128073;</span>`
+            }
+        
+    }
+    
+        
+     
+    }}
+
+    </script>
+</body>
+</html>

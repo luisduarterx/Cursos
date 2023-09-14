@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    background-color: #2596be;
+    color: #eeeee4;
+    padding:0;
+    text-align: center;
+}
+.container{
+    background-color: #1e7898;
+    text-align: center;
+}
+.result{
+    margin-bottom: 50px;
+}
+ul{
+    display: flex;
+    
+    
+}
+ul li{
+    background-color: #0f4158;
+    width: 200px;
+    margin-right: 20px;
+    min-height: 50px;
+    list-style: none;
+    
+}

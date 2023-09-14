@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUe horas são?</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(234,182,118)
+        }
+        .box{
+            width: 70%;
+            height: auto;
+            padding: 10px;
+            background-color: white;
+            margin: auto;
+            margin-top: 150px;
+            text-align: center;
+            color: black;
+        }
+        div img{
+            width: 250px;
+            height: 250px;
+            border-radius: 250px;
+            background-image: url('img/dia.jpg');
+        }
+        p{
+            text-align: center;
+            text-decoration: underline ;
+        }
+        .title{
+            text-align: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1 class="title"> Seja Bem vindo !</h1>
+    <div class="box" id="content">
+        <h1>Bom dia, espero que seu dia seja maravilhoso!</h1>
+        <h3>Agora são 10 horas </h3>
+        
+    </div>
+    <p>© Desenvolvido por Luis Roxo</p>
+
+    <script>
+       var agora = new Date()
+    var diaSem = agora.getDay()
+    var mes = agora.getMonth()
+    var ano = agora.getFullYear()
+    var hora = agora.getHours()
+
+    // Declaração de funções para transformar valores de numeros em meses escritos e dias escritos
+    function mesAtual(){ // Nao foi usado
+        switch(mes){
+        case 0 : 'Janeiro'
+            break
+        case 1 : 'Fevereiro'
+            break
+        case 2: 'Março'
+            break
+        case 3: 'Abril'
+            break
+        case 4: 'Maio'
+            break
+        case 5: 'Junho'
+            break
+        case 6: 'Julho'
+            break
+        case 7: 'Agosto'
+            break
+        case 8: 'Setembro'
+            break
+        case 9: 'Outubro'
+            break
+        case 10: 'Novembro'
+            break
+        case 11: 'Dezembro'
+            break
+        }
+    }
+    function diaSemana(){ // Nao foi usado
+
+switch(diaSem){
+    case 0 :  "Domingo"
+    break
+    case 1 : "Segunda-Feira"
+    break
+    case 2 : "Terça-Feira"
+    break
+    case 3 : "Quarta-Feira"
+    break
+    case 4 : "Quinta-Feira"
+    break
+    case 5 : "Sexta-Feira"
+    break
+    case 6 : "Sábado"
+    break
+    default : "Dia Inválido"
+
+}
+}
+        
+    const saudacao = document.querySelector('.box h1')
+    const horaM = document.querySelector('h3')
+    const imagem = document.querySelector('#content')
+    const body = document.querySelector('body')
+
+    horaM.innerHTML = `Agora são ${hora} horas `
+
+    if(hora > 5 && hora < 12){
+        saudacao.innerHTML = "Bom dia, espero que seu dia seja maravilhoso!"
+        imagem.innerHTML += '<img src="img/manha.jfif"  id="imagem">'
+        body.style.backgroundColor = 'rgb(171,219,227)'
+    } else if(hora > 17 || hora < 5){
+        saudacao.innerHTML = "Boa noite, durma bem e tenha um bom descanso!"
+        imagem.innerHTML += '<img src="img/noite.jpg"  id="imagem">'
+        body.style.backgroundColor = 'rgb(6,57,112)'
+        body.style.color = 'white'
+
+    } else {
+        saudacao.innerHTML = "Boa tarde, se alimente bem e nao esqueça de beber água!"
+        imagem.innerHTML += '<img src="img/dia.jpg"  id="imagem">'
+        body.style.backgroundColor = 'rgb(234,182,118)'
+    }
+
+
+
+    </script>
+</body>
+</html>

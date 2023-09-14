@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>OLA</h1>
+    <script>
+        
+       
+      var nome = window.prompt("Digite seu nome")
+      var nascimento = Number(window.prompt("Digite sua data de nascimento"))
+      var anoAtual = Number(window.prompt("Digite o ano atual"))
+      var salario = Number(window.prompt("Quanto é o seu salário?"))
+      var idade = anoAtual - nascimento
+
+        
+
+
+      document.write(`Olá ${nome} voce tem ${idade} anos e recebe um salário de ${salario.toLocaleString('pt-BR',{style: 'currency', currency:'BRL'})}`)
+
+
+
+      </script>
+</body>
+</html>
